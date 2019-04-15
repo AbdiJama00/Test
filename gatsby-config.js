@@ -74,5 +74,13 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId:"t29nq10uzl0w",
+        accessToken:"4e291ddaa6df119df266c0275415b643866a9ee9819262ba7030b6a327d21d0b"
+      }
+    },
+    `@contentful/gatsby-transformer-contentful-richtext`
   ],
 }
