@@ -16,7 +16,7 @@ class BlogPostContentfulTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.title} description={post.subtitle}/>
-        <Img fluid={post.image.fluid}/>
+        <Image fluid={post.image.fluid}/>
         <h1>{post.title}</h1>
 
         <div dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }} />

@@ -36,7 +36,7 @@ class BlogIndex extends React.Component {
           return (
             <Post key={node.slug}>
             <PostImage>
-              <Img fluid={node.image.fluid} />
+              <Image fluid={node.image.fluid} />
             </PostImage>
             <PostText>
               <h3
