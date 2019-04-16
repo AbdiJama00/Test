@@ -3,9 +3,9 @@ module.exports = {
     title: `BIOZONE ACADEMY`,
     author: `Abdullahi Jama`,
     description: `A starter site.`,
-    siteUrl: ``,
+    siteUrl: `https://BIOZONE-demo.netlify.com/`,
     social: {
-      twitter: ``,
+      twitter: `Abdi`,
     },
   },
   plugins: [
