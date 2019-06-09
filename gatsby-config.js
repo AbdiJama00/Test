@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `BIOZONE ACADEMY`,
+    title: `BIOZONE HUB`,
     author: `Abdullahi Jama`,
     description: `A starter site.`,
     siteUrl: `https://BIOZONE-demo.netlify.com/`,
     social: {
-      twitter: `Abdi`,
+      twitter: `#Abdi`,
     },
   },
   plugins: [

@@ -15,9 +15,9 @@ class BlogPostContentfulTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.title} description={post.subtitle}/>
+        <SEO title={post.activity} description={post.subtitle}/>
         <Image fluid={post.image.fluid}/>
-        <h1>{post.title}</h1>
+        <h1>{post.activity}</h1>
 
         <div dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }} />
         <hr
@@ -67,7 +67,7 @@ export const pageQuery = graphql`
       }
     }
     contentfulPost( slug: {eq: $slug}){
-      title
+      activity
       subtitle
       author
       image{
