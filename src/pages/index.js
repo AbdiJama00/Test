@@ -70,7 +70,7 @@ export const pageQuery = graphql`
       title
     }
   }
-  allContentfulChapter {
+  allContentfulChapter(sort: {fields: name}) {
     edges {
       node {
         name
