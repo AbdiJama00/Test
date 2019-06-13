@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 
-import Bio from "../components/bio"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import {rhythm} from "../utils/typography"
@@ -15,9 +15,9 @@ class BlogPostContentfulTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.title} description={post.subtitle}/>
+        <SEO title={post.activity} description={post.subtitle}/>
         <Image fluid={post.image.fluid}/>
-        <h1>{post.title}</h1>
+        <h1>{post.activity}</h1>
 
         <div dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }} />
         <hr
@@ -25,7 +25,7 @@ class BlogPostContentfulTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio/>
+
 
         <ul
           style={{
