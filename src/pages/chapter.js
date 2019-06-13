@@ -18,11 +18,11 @@ const PostImage = styled.div`
 const PostText = styled.div`
   flex: 75%;
 `
-class BlogChapters extends React.Component {
+class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const chapters = data.allContentfulChapter.edges
+    const posts = data.allContentfulPost.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -31,8 +31,8 @@ class BlogChapters extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Bio />
-        {chapters.map(({ node }) => {
-          const title = node.name || node.slug
+        {posts.map(({ node }) => {
+          const title = node.activity || node.slug
           return (
             <Post key={node.slug}>
             <PostImage>
@@ -45,7 +45,7 @@ class BlogChapters extends React.Component {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to="/chapter">
+                <Link style={{ boxShadow: `none` }} to={node.slug}>
                   {title}
                 </Link>
               </h3>
@@ -61,19 +61,24 @@ class BlogChapters extends React.Component {
   }
 }
 
-export default BlogChapters
+export default BlogIndex
 
-export const staticQuery = graphql`
+export const pageQuery = graphql`
 {
   site {
     siteMetadata {
       title
+      author
     }
   }
-  allContentfulChapter(sort: {fields: name}) {
+  allContentfulPost(filter: {activity: {regex: "/3/"}}, sort: {fields: id}) {
     edges {
       node {
-        name
+        title
+        activity
+        slug
+        subtitle
+        author
         image{
         fluid{
           ...GatsbyContentfulFluid
